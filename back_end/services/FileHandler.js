@@ -4,6 +4,17 @@ function getAllData(path){
     return JSON.parse(fs.readFileSync(path));
 }
 
+function getData(path, id){
+    const data = JSON.parse(fs.readFileSync(path));
+    let aux = null;
+    data.forEach(element => {
+        if(element.id == id){
+            aux = element;
+        }
+    });
+    return aux;
+}
+
 function addData(path, newData){
     try{
         const oldData = JSON.parse(fs.readFileSync(path));
@@ -37,4 +48,5 @@ module.exports = {
     getAllData,
     addData,
     removeData,
+    getData
 }

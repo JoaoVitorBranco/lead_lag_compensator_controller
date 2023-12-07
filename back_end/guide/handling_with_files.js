@@ -1,4 +1,4 @@
-const FileHandler = require("./FileHandler");
+const FileHandler = require("../services/FileHandler");
 
 const fs = require("fs");
 
